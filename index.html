@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TestSpark</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="deck-header" aria-label="Navigation du diaporama">
+      <a class="brand" href="#slide-1" aria-label="TestSpark, première diapositive">
+        <span class="brand-mark" aria-hidden="true">T</span>
+        <span>TestSpark</span>
+      </a>
+      <div class="deck-status">
+        <span id="slide-count">01</span>
+        <span class="status-divider" aria-hidden="true">/</span>
+        <span id="slide-total">06</span>
+      </div>
+    </header>
+
+    <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+
+    <main class="deck" id="deck" aria-label="Présentation TestSpark">
+      <section class="slide slide-cover is-active" id="slide-1" aria-labelledby="title-1">
+        <div class="slide-inner cover-layout">
+          <div class="cover-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              IFT3913
+            </p>
+            <h1 id="title-1">
+              Présentation de
+              <span>TestSpark</span>
+            </h1>
+            <p class="cover-description">Une extension open-source par JetBrains.</p>
+            <div class="cover-footer">
+              <span>
+                Andrei Bituleanu -
+                <date>29/09/2026</date>
+              </span>
+            </div>
+          </div>
+          <div class="cover-art" aria-label="Emplacement pour l’image principale" role="img">
+            <div class="art-frame">
+              <img src="./images/default.png" alt="Image de couverture du projet TestSpark" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide-intro" id="slide-2" aria-labelledby="title-2">
+        <div class="slide-inner intro-layout">
+          <div class="section-heading">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Pourquoi et par qui?
+            </p>
+            <h2 id="title-2">Pourquoi TestSpark existe.</h2>
+          </div>
+          <div class="intro-content">
+            <div class="image-placeholder intro-image">
+              <img src="./images/jetbrains-logo.png" alt="Image de JetBrains" />
+            </div>
+            <div class="text-block">
+              <p class="lead">TestSpark est un plugin expérimental pour IntelliJ par JetBrains pour utiliser une IA pour écrire ses test units.</p>
+              <p class="supporting-text">Il utilise une interface unique intégrée au workflow du dev pour produire des tests pertinents et qui fonctionnent avec notre code spécifique.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide-method" id="slide-3" aria-labelledby="title-3">
+        <div class="slide-inner method-layout llm-layout">
+          <div class="method-heading">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Stratégie 1
+            </p>
+            <h2 id="title-3">
+              Génération par
+              <span>LLM</span>
+            </h2>
+            <p class="method-summary">Le modèle lit le code et propose des tests adaptés à son comportement.</p>
+          </div>
+          <div class="method-details">
+            <div class="method-facts" aria-label="Points clés de la génération par LLM">
+              <article class="method-fact">
+                <h3>Entrée</h3>
+                <p>Code source sélectionné par le développeur</p>
+              </article>
+              <article class="method-fact">
+                <h3>Modèles</h3>
+                <p>OpenAI ou Google AI, avec un token d’accès fourni par l’utilisateur</p>
+              </article>
+              <article class="method-fact">
+                <h3>Résultat</h3>
+                <p>Tests unitaires pertinents, suggérés selon le contexte du code</p>
+              </article>
+            </div>
+            <div class="method-example">
+              <span class="example-label">EXEMPLE</span>
+              <p>
+                Pour
+                <code>isAdult(age)</code>
+                , le LLM peut proposer les cas
+                <code>17</code>
+                ,
+                <code>18</code>
+                et
+                <code>25</code>
+                .
+              </p>
+            </div>
+          </div>
+          <div class="method-image llm-image-frame">
+            <img src="./images/exempleLLM.png" alt="Exemple de génération de tests par LLM" />
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide-method" id="slide-4" aria-labelledby="title-4">
+        <div class="slide-inner method-layout">
+          <div class="method-heading">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span>
+                Stratégie 2
+            </p>
+            <h2 id="title-4"><span>EvoSuite</span></h2>
+            <p class="method-summary">Une recherche automatique fait évoluer les tests pour améliorer la couverture.</p>
+          </div>
+          <div class="method-details">
+            <div class="method-facts" aria-label="Points clés d’EvoSuite">
+              <article class="method-fact">
+                <h3>Entrée</h3>
+                <p>Tests initiaux, notamment ceux proposés par le LLM</p>
+              </article>
+              <article class="method-fact">
+                <h3>Optimisation</h3>
+                <p>Fait varier les tests pour explorer branches et chemins d’exception</p>
+              </article>
+              <article class="method-fact">
+                <h3>Évaluation</h3>
+                <p>Couverture du code ; la mutation vérifie si les tests détectent des changements artificiels</p>
+              </article>
+            </div>
+            <div class="method-example">
+              <span class="example-label">EXEMPLE</span>
+              <p>
+                Pour
+                <code>prixFinal(prix, remise)</code>
+                , EvoSuite essaie des entrées variées afin d’atteindre les branches limites et les exceptions.
+              </p>
+            </div>
+          </div>
+          <div class="code-visual" role="img" aria-label="Exemple schématique de variation des tests avec EvoSuite">
+            <div class="code-visual-header">
+              <span class="code-visual-title">EVOSUITE</span>
+              <span class="code-visual-tag">ILLUSTRATION</span>
+            </div>
+            <pre><code><span class="code-comment">// Explorer les entrées</span>
+<span class="code-step">01</span> prixFinal(100, 10)
+<span class="code-step">02</span> prixFinal(0, -5)
+<span class="code-step">03</span> prixFinal(100, 100)
+
+<span class="code-comment">// Garder les cas qui couvrent</span>
+<span class="code-comment">// de nouvelles branches</span></code></pre>
+            <p class="code-visual-caption">
+              Générer
+              <span>→</span>
+              varier
+              <span>→</span>
+              mesurer la couverture
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide-method" id="slide-5" aria-labelledby="title-5">
+        <div class="slide-inner method-layout">
+          <div class="method-heading">
+            <p class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Stratégie 3
+            </p>
+            <h2 id="title-5">
+              Exécution
+              <span>symbolique</span>
+            </h2>
+            <p class="method-summary">Kex raisonne sur les conditions d’exécution pour chercher des chemins difficiles à atteindre.</p>
+          </div>
+          <div class="method-details">
+            <div class="method-facts" aria-label="Points clés de Kex">
+              <article class="method-fact">
+                <h3>Principe</h3>
+                <p>Remplace les valeurs concrètes par des variables symboliques</p>
+              </article>
+              <article class="method-fact">
+                <h3>Analyse</h3>
+                <p>Construit les contraintes de chaque chemin puis cherche des entrées qui les satisfont</p>
+              </article>
+              <article class="method-fact">
+                <h3>À retenir</h3>
+                <p>Explore des chemins rares, mais les tests produits peuvent être moins lisibles</p>
+              </article>
+            </div>
+            <div class="method-example">
+              <span class="example-label">EXEMPLE</span>
+              <p>
+                Pour
+                <code>x &gt; 0 &amp;&amp; x != 5</code>
+                , Kex cherche par exemple
+                <code>0</code>
+                ,
+                <code>5</code>
+                et
+                <code>6</code>
+                pour explorer les différentes issues.
+              </p>
+            </div>
+          </div>
+          <div class="code-visual" role="img" aria-label="Exemple schématique des contraintes explorées par Kex">
+            <div class="code-visual-header">
+              <span class="code-visual-title">KEX CONTRAINTES</span>
+              <span class="code-visual-tag">ILLUSTRATION</span>
+            </div>
+            <pre><code><span class="code-keyword">if</span> (x &gt; 0 &amp;&amp; x != 5) {
+  traiter(x);
+}
+
+<span class="code-comment">// Chemins et entrées possibles</span>
+x &lt;= 0          <span class="code-comment">// x = 0</span>
+x &gt; 0 &amp;&amp; x == 5 <span class="code-comment">// x = 5</span>
+x &gt; 0 &amp;&amp; x != 5 <span class="code-comment">// x = 6</span></code></pre>
+            <p class="code-visual-caption">
+              Symbole
+              <span>→</span>
+              contraintes
+              <span>→</span>
+              valeurs concrètes
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide-outro" id="slide-6" aria-labelledby="title-6">
+        <div class="slide-inner outro-layout">
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Et maintenant?
+          </p>
+          <div class="outro-content">
+            <h2 id="title-6">
+              Prêts à faire
+              <br />
+              des
+              <span>étincelles?</span>
+            </h2>
+            <div class="outro-side">
+              <div class="image-placeholder outro-image">
+                <span class="image-prompt">Logo ou visuel final</span>
+              </div>
+              <p>[Une conclusion, une prochaine étape ou un appel à l’action.]</p>
+              <a class="contact-link" href="mailto:bonjour@testspark.fr">
+                [Votre contact]
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="outro-brand">
+            TESTSPARK
+            <span</span>
+            [Année]
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="slide-nav" aria-label="Commandes du diaporama">
+      <div class="timer" role="group" aria-label="Minuteur de présentation">
+        <span class="timer-label">MINUTEUR</span>
+        <output class="timer-display" id="timer-display" aria-live="off">07:00</output>
+        <button class="timer-control" id="timer-toggle" type="button" aria-label="Mettre le minuteur en pause" title="Mettre le minuteur en pause">
+          <span id="timer-toggle-icon" aria-hidden="true">Ⅱ</span>
+        </button>
+        <button class="timer-reset" id="timer-reset" type="button" aria-label="Réinitialiser le minuteur" title="Réinitialiser le minuteur">
+          <span aria-hidden="true">↻</span>
+        </button>
+      </div>
+      <div class="nav-controls">
+        <button class="nav-button" id="previous-slide" type="button" aria-label="Diapositive précédente" disabled>
+          <span aria-hidden="true">↑</span>
+        </button>
+        <button class="nav-button nav-button-next" id="next-slide" type="button" aria-label="Diapositive suivante">
+          <span aria-hidden="true">↓</span>
+        </button>
+      </div>
+    </nav>
+  </body>
+</html>
