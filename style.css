@@ -1295,9 +1295,7 @@ img.image-placeholder {
 
 .slide:not(.slide-outro) {
   background-color: var(--paper);
-  background-image:
-    linear-gradient(rgba(32, 37, 34, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(32, 37, 34, 0.035) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(32, 37, 34, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(32, 37, 34, 0.035) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -1316,9 +1314,7 @@ img.image-placeholder {
 .slide.slide-detroit {
   padding: 0;
   background-color: var(--paper);
-  background-image:
-    linear-gradient(rgba(32, 37, 34, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(32, 37, 34, 0.035) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(32, 37, 34, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(32, 37, 34, 0.035) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 .detroit-layout {
@@ -1463,6 +1459,40 @@ img.image-placeholder {
   width: 100%;
   aspect-ratio: 470 / 339;
   object-fit: cover;
+}
+
+.sources-layout {
+  display: grid;
+  gap: 18px;
+}
+.sources-layout .eyebrow,
+.sources-layout h2 {
+  margin-bottom: 0;
+}
+.sources-layout h2 {
+  font-size: clamp(42px, 6vw, 68px);
+}
+.source-list {
+  margin: 8px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+.source-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.source-list a {
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  text-decoration-color: rgba(32, 37, 34, 0.28);
+  text-underline-offset: 4px;
+}
+.source-list a:hover {
+  color: #6f8f2d;
+  text-decoration-color: currentColor;
 }
 
 .slide-nav {
