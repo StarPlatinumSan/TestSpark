@@ -1192,7 +1192,6 @@ img.image-placeholder {
 }
 .method-context-warning {
   padding: 13px 14px;
-  border-left: 3px solid var(--orange);
   background: #fff0eb;
 }
 .method-context-warning > span {
